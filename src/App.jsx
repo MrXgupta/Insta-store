@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ProductCard from "./components/ProductCard";
+import Footer from "./components/Footer";
 
 import useProducts from "./hooks/useProducts";
 import { useMemo, useState } from "react";
@@ -83,6 +84,7 @@ function App() {
                     </div>
                 )}
             </section>
+            <Footer />
         </div>
     );
 }
