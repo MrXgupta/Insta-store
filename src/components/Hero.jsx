@@ -1,13 +1,14 @@
 import { FiSearch } from "react-icons/fi";
 
-export default function Hero() {
+export default function Hero({selectedCategory, setSelectedCategory, filteredProducts, }) {
     const categories = [
         "All",
+        "Agarbatti",
+        "Camphor",
         "Cones",
         "Dhoop",
-        "Camphor",
-        "Containers",
-        "Tumblers",
+        "Dhoop Stick",
+        "Sambrani",
     ];
 
     return (
@@ -46,10 +47,10 @@ export default function Hero() {
                 {categories.map((category) => (
                     <button
                         key={category}
-                        className={`rounded-full px-5 py-2 text-sm font-medium transition
-              ${
-                            category === "All"
-                                ? "bg-black text-white"
+                        onClick={() => setSelectedCategory(category)}
+                        className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-200 ${
+                            selectedCategory === category
+                                ? "bg-black text-white shadow-lg"
                                 : "border border-gray-200 bg-white text-gray-700 hover:border-black hover:text-black"
                         }`}
                     >
@@ -63,6 +64,21 @@ export default function Hero() {
                 Prices and availability may change. Please check Flipkart for the latest
                 details before purchasing.
             </p>
+
+
+            <div className="mx-auto mb-6 max-w-7xl px-4 text-center mt-10">
+                <p className="text-sm text-gray-600">
+                    Showing <span className="font-semibold">{filteredProducts.length}</span>{" "}
+                    product{filteredProducts.length !== 1 ? "s" : ""}
+                    {selectedCategory !== "All" && (
+                        <>
+                            {" "}
+                            in <span className="font-semibold">{selectedCategory}</span>
+                        </>
+                    )}
+                </p>
+            </div>
+
         </section>
     );
 }
