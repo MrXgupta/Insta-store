@@ -61,7 +61,7 @@ export default function ProductCard({ product }) {
             ₹{sellingPrice}
           </span>
 
-                    <span className="text-gray-400 line-through">
+                    <span className="text-red-400 line-through">
             ₹{regularPrice}
           </span>
 

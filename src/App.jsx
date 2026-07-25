@@ -45,16 +45,42 @@ function App() {
                 setSearchQuery={setSearchQuery}
             />
 
-            <section className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 pb-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <section className="mx-auto max-w-7xl px-4 pb-10">
                 {loading ? (
-                    <p>Loading...</p>
+                    <div className="py-20 text-center">
+                        <p className="text-lg text-gray-500">Loading products...</p>
+                    </div>
+                ) : filteredProducts.length === 0 ? (
+                    <div className="flex flex-col items-center justify-center py-20">
+                        <div className="mb-4 text-6xl">🔍</div>
+
+                        <h2 className="text-2xl font-bold text-gray-800">
+                            No products found
+                        </h2>
+
+                        <p className="mt-2 max-w-md text-center text-gray-500">
+                            We couldn't find any products matching your search or selected category.
+                        </p>
+
+                        <button
+                            onClick={() => {
+                                setSearchQuery("");
+                                setSelectedCategory("All");
+                            }}
+                            className="mt-6 rounded-xl bg-black px-6 py-3 text-white transition hover:bg-gray-800"
+                        >
+                            View All Products
+                        </button>
+                    </div>
                 ) : (
-                    filteredProducts.map((product) => (
-                        <ProductCard
-                            key={product.sku}
-                            product={product}
-                        />
-                    ))
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        {filteredProducts.map((product) => (
+                            <ProductCard
+                                key={product.sku}
+                                product={product}
+                            />
+                        ))}
+                    </div>
                 )}
             </section>
         </div>
