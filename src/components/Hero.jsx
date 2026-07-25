@@ -1,6 +1,6 @@
 import { FiSearch } from "react-icons/fi";
 
-export default function Hero({selectedCategory, setSelectedCategory, filteredProducts, }) {
+export default function Hero({selectedCategory, setSelectedCategory, filteredProducts,  searchQuery, setSearchQuery, }) {
     const categories = [
         "All",
         "Agarbatti",
@@ -36,6 +36,8 @@ export default function Hero({selectedCategory, setSelectedCategory, filteredPro
 
                     <input
                         type="text"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Search products..."
                         className="w-full bg-transparent text-gray-700 outline-none placeholder:text-gray-400"
                     />
