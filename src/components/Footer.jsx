@@ -78,8 +78,12 @@ export default function Footer() {
                         <h3 className="text-lg font-semibold text-gray-900">
                             Our Address
                         </h3>
-
-                        <div className="mt-5 flex items-start gap-3 text-gray-600">
+                        <a
+                            href="https://maps.google.com/?q=52-B+Rama+Road+Industrial+Area+Kirti+Nagar+New+Delhi+110015"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-5 flex items-start gap-3 text-gray-600 transition hover:text-black"
+                        >
                             <FiMapPin className="mt-1 text-lg flex-shrink-0" />
 
                             <p className="leading-7">
@@ -91,7 +95,7 @@ export default function Footer() {
                                 <br />
                                 New Delhi, Delhi 110015
                             </p>
-                        </div>
+                        </a>
                     </div>
 
                 </div>

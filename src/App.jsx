@@ -2,9 +2,9 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ProductCard from "./components/ProductCard";
 import Footer from "./components/Footer";
-
 import useProducts from "./hooks/useProducts";
 import { useMemo, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
     const { products, loading } = useProducts();
@@ -85,6 +85,7 @@ function App() {
                 )}
             </section>
             <Footer />
+            <Analytics />
         </div>
     );
 }
