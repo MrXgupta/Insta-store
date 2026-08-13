@@ -1,19 +1,21 @@
+import { Link } from 'react-router-dom'
+
 export default function Navbar() {
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/90 backdrop-blur-md">
-            <div className="mx-auto flex flex-col items-center justify-center px-4 py-4">
-                {/* Logo */}
-                <img
-                    src="/logo.png"
-                    alt="Kuber"
-                    className="h-14 w-auto sm:h-16"
-                />
+        <>
+            <div className="flex justify-center flex-col items-center p-7 text-3xl gap-10 border-b-2 border-gray-200 bg-gray-1090 bg-white/95 backdrop-blur sticky top-0 z-50">
+                <a href="/" className="flex flex-col items-center gap-4">
+                <img src="/logo.png" alt="Kuber Dhoop & Agarbatti" className="w-30 h-30" />
+                <span className="font-bold ">Kuber - Dhoop & Agarbatti</span>
+                </a>
 
-                {/* Brand Name */}
-                <h1 className="mt-2 text-lg font-bold tracking-wide text-gray-900 sm:text-xl">
-                    Kuber - Dhoop &amp; Agarbatti
-                </h1>
+                {/*<div className="flex justify-between w-full px-10">*/}
+                {/*    <Link to="/collection"> Collection </Link>*/}
+                {/*    <Link to="/shop-now"> Shop Now </Link>*/}
+                {/*    <Link to="/contact-us"> Contact Us </Link>*/}
+                {/*    <Link to="/catalog"> Catalog </Link>*/}
+                {/*</div>*/}
             </div>
-        </header>
-    );
+        </>
+    )
 }
