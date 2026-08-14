@@ -32,7 +32,10 @@ export default function Hero() {
             categories={categories}
             setCategoryFilter={setCategoryFilter}
         />
-        <ProductCards filteredProducts={filteredProducts} />
+            {filteredProducts.length > 0 ?
+            <ProductCards filteredProducts={filteredProducts} />
+            : <p className="text-center text-5xl animate-pulse  font-bold py-50">Loading...</p>
+            }
         </>
     )
 }

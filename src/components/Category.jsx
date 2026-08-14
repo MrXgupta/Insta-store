@@ -5,7 +5,7 @@ export default function Category({
                                  }) {
     return (
         <>
-            <div className="p-6 sm:p-10">
+            <div className="p-6">
                 <h1 className="mb-5 text-center text-4xl font-bold">
                     Categories
                 </h1>
