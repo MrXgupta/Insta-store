@@ -1,13 +1,19 @@
+import { Analytics } from '@vercel/analytics/react';
+import {Routes, Route,} from "react-router-dom";
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
-import { Analytics } from '@vercel/analytics/react';
+import LandingPage from "./components/LandingPage";
 
 function App() {
     return (
         <>
             <Navbar />
-            <Hero />
+            <Routes>
+
+                <Route path="/" element={<LandingPage/>} />
+                <Route path="/allProducts" element={<Hero/>} />
+            </Routes>
             <Footer />
             <Analytics />
         </>
