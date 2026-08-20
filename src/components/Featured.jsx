@@ -33,6 +33,7 @@ export default function Featured() {
                 </Link>
             </div>
 
+            {products.length > 0 ?
             <div className="flex w-full gap-10 p-10 overflow-x-auto">
                 {products.map(product => (
                     <div
@@ -87,7 +88,7 @@ export default function Featured() {
                         </a>
                     </div>
                 ))}
-            </div>
+            </div> : <p className="text-4xl font-bold animate-pulse">Loading...</p> }
         </>
     );
 }
