@@ -4,6 +4,7 @@ import Section02 from './Section02'
 import Featured from './Featured';
 import WhyChooseKuber from "./WhyChooseKuber.jsx";
 import CustomerSays from "./CustomerSays";
+import Hero from './Hero';
 
 export default function LandingPage() {
     return (
@@ -13,6 +14,7 @@ export default function LandingPage() {
             <Section02/>
             <Featured/>
             <WhyChooseKuber/>
+            <Hero/>
             <CustomerSays/>
         </>
     )
